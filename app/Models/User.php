@@ -57,4 +57,15 @@ class User extends Authenticatable // implements MustVerifyEmail
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
     }
+
+    public function microposts()
+    {
+        return $this->hasMany(Micropost::class);
+    }
+
+    // MicroPostsの合計数
+    public function loadRelationshipCounts()
+    {
+        $this->loadCount('microposts');
+    }
 }

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MicropostsController; 
+use App\Http\Controllers\UserFollowController;  
+
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -19,6 +21,14 @@ Route::get('/dashboard', [MicropostsController::class, 'index'])->middleware(['a
 
 
 Route::middleware(['auth'])->group(function () {
+    
+    Route::prefix('users/{id}')->group(function () {
+        Route::post('follow', [UserFollowController::class, 'store'])->name('user.follow');
+        Route::delete('unfollow', [UserFollowController::class, 'destroy'])->name('user.unfollow');
+        Route::get('followings', [UsersController::class, 'followings'])->name('users.followings');
+        Route::get('followers', [UsersController::class, 'followers'])->name('users.followers');
+    });
+
     Route::redirect('settings', 'settings/profile');
 
     Route::resource('users', UsersController::class, ['only' => ['index', 'show']]);

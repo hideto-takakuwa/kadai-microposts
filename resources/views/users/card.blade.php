@@ -9,4 +9,4 @@
 </div>
 
 {{-- フォロー／アンフォローボタン --}}
-@include('user_follow.follow_button')
+@include('user_follow.follow_button', ['fullWidth' => true])

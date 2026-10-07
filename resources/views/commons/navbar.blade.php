@@ -2,7 +2,18 @@
     <nav class="navbar bg-neutral text-neutral-content">
         {{-- トップページへのリンク --}}
         <div class="flex-1">
-            <h1><a class="btn btn-ghost text-xl" href="/">Microposts</a></h1>
+            <h1>
+                <a class="btn btn-ghost text-xl gap-2" href="/" aria-label="Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path d="M5 10v10h14V10" />
+                        <path d="M9 20v-6h6v6" />
+                    </svg>
+
+                    <span>Microposts</span>
+                </a>
+            </h1>
         </div>
 
         <div class="flex-none">

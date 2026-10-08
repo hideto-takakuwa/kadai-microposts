@@ -5,7 +5,7 @@
 
             <div class="form-control mt-4">
                 <textarea rows="3" name="content" class="textarea textarea-bordered w-full resize-none text-base"
-                    placeholder="ふと思ったこと、ここに。">{{ old('content') }}</textarea>
+                    placeholder="いま何してる？">{{ old('content') }}</textarea>
             </div>
 
             <div class="mt-3 flex justify-end">

@@ -4,10 +4,30 @@
     @auth
         <div class="sm:grid sm:grid-cols-3 sm:gap-10">
             <aside class="mt-4">
-                {{-- ユーザー情報 --}}
-                @include('users.card')
+                {{-- ホーム用のユーザー情報 --}}
+                <div class="rounded-xl border border-base-300 bg-base-100 p-4 shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <div class="avatar shrink-0">
+                            <div class="w-12 rounded-full">
+                                <img src="{{ Gravatar::get($user->email) }}" alt="" />
+                            </div>
+                        </div>
+                        <a href="{{ route('users.show', $user->id) }}"
+                            class="min-w-0 break-words font-semibold link link-hover text-info">
+                            {{ $user->name }}
+                        </a>
+                    </div>
+                    <a href="{{ route('users.show', $user->id) }}"
+                        class="btn btn-ghost btn-sm mt-3 w-full">
+                        View my profile
+                    </a>
+                </div>
             </aside>
-            <div class="sm:col-span-2">
+            <div class="mt-4 sm:col-span-2">
+                <h2 class="text-2xl font-bold">Home</h2>
+                <p class="mt-1 text-sm text-base-content/60">
+                    フォロー中のユーザーとあなたの最新の投稿
+                </p>
                 {{-- 投稿フォーム --}}
                 @include('microposts.form')
                 {{-- 投稿一覧 --}}

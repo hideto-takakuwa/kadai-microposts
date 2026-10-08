@@ -10,15 +10,15 @@
 
             <button type="submit"
                 class="btn btn-outline btn-sm rounded-full normal-case group hover:border-error hover:bg-error/10
-                    {{ $fullWidth ? 'w-full' : 'min-w-24' }}"
+                    {{ $fullWidth ? 'w-full' : 'min-w-28' }}"
                 onclick="return confirm('{{ $user->name }} さんのフォローを外しますか？')">
 
                 <span class="group-hover:hidden">
-                    Following
+                    フォロー中
                 </span>
 
                 <span class="hidden text-error group-hover:inline">
-                    Unfollow
+                    フォロー解除
                 </span>
             </button>
         </form>
@@ -28,8 +28,8 @@
 
             <button type="submit"
                 class="btn btn-primary btn-sm rounded-full normal-case
-                    {{ $fullWidth ? 'w-full' : 'min-w-24' }}">
-                Follow
+                    {{ $fullWidth ? 'w-full' : 'min-w-28' }}">
+                フォローする
             </button>
         </form>
     @endif

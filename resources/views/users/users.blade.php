@@ -16,13 +16,13 @@
 
                         <div class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                             <a href="{{ route('users.followings', $user->id) }}" class="link link-hover whitespace-nowrap">
-                                <span class="font-semibold tabular-nums text-base-content">{{ $user->followings_count }}</span>
-                                <span class="text-base-content/60">Following</span>
+                                <span class="text-base-content/60">フォロー中</span>
+                                <span class="font-semibold tabular-nums text-base-content">{{ $user->followings_count }}人</span>
                             </a>
 
                             <a href="{{ route('users.followers', $user->id) }}" class="link link-hover whitespace-nowrap">
-                                <span class="font-semibold tabular-nums text-base-content">{{ $user->followers_count }}</span>
-                                <span class="text-base-content/60">Followers</span>
+                                <span class="text-base-content/60">フォロワー</span>
+                                <span class="font-semibold tabular-nums text-base-content">{{ $user->followers_count }}人</span>
                             </a>
                         </div>
 
@@ -39,7 +39,7 @@
                     @endif
 
                     <a href="{{ route('users.show', $user->id) }}" class="btn btn-ghost btn-sm">
-                        View profile
+                        プロフィールを見る
                     </a>
                 </div>
             </li>

@@ -5,7 +5,7 @@
 
             <div class="form-control mt-4">
                 <textarea rows="3" name="content" class="textarea textarea-bordered w-full resize-none text-base"
-                    placeholder="What's happening?">{{ old('content') }}</textarea>
+                    placeholder="ふと思ったこと、ここに。">{{ old('content') }}</textarea>
             </div>
 
             <div class="mt-3 flex justify-end">
@@ -16,7 +16,7 @@
                         <path d="M22 2 11 13" />
                     </svg>
 
-                    <span>Post</span>
+                    <span>投稿する</span>
                 </button>
             </div>
         </form>

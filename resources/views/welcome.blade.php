@@ -18,14 +18,14 @@
                         </a>
                     </div>
                     <a href="{{ route('users.show', $user->id) }}" class="btn btn-ghost btn-sm mt-3 w-full">
-                        View my profile
+                        自分のプロフィール
                     </a>
                 </div>
             </aside>
             <div class="mt-4 sm:col-span-2">
-                <h2 class="text-2xl font-bold">Home</h2>
+                <h2 class="text-2xl font-bold">タイムライン</h2>
                 <p class="mt-1 text-sm text-base-content/60">
-                    フォロー中のユーザーとあなたの最新の投稿
+                    フォロー中の人たちの近況をチェック
                 </p>
                 {{-- 投稿フォーム --}}
                 @include('microposts.form')
@@ -77,11 +77,11 @@
 
                     <div class="mt-8 flex flex-wrap gap-3">
                         <a href="{{ route('register') }}" class="btn btn-primary rounded-full px-7">
-                            Sign up
+                            新規登録
                         </a>
 
                         <a href="{{ route('login') }}" class="btn btn-outline rounded-full px-7">
-                            Log in
+                            ログイン
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                             </div>
 
                             <div>
-                                <p class="font-semibold">Post</p>
+                                <p class="font-semibold">投稿</p>
                                 <p class="text-sm text-base-content/60">
                                     今感じていることを気軽に投稿
                                 </p>
@@ -118,7 +118,7 @@
                             </div>
 
                             <div>
-                                <p class="font-semibold">Follow</p>
+                                <p class="font-semibold">フォロー</p>
                                 <p class="text-sm text-base-content/60">
                                     気になるユーザーをフォロー
                                 </p>
@@ -132,15 +132,15 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5">
                                     <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5
-                                                    -1.935 0-3.597 1.126-4.312 2.733
-                                                    -.715-1.607-2.377-2.733-4.313-2.733
-                                                    C5.1 3.75 3 5.765 3 8.25
-                                                    c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                                                    -1.935 0-3.597 1.126-4.312 2.733
+                                                                    -.715-1.607-2.377-2.733-4.313-2.733
+                                                                    C5.1 3.75 3 5.765 3 8.25
+                                                                    c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                                 </svg>
                             </div>
 
                             <div>
-                                <p class="font-semibold">Favorite</p>
+                                <p class="font-semibold">お気に入り</p>
                                 <p class="text-sm text-base-content/60">
                                     気に入った投稿をお気に入り保存
                                 </p>

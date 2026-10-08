@@ -34,7 +34,7 @@ class MicropostsController extends Controller
     {
         // バリデーション
         $request->validate([
-            'content' => 'required|max:255',
+            'content' => 'required|string|max:255',
         ]);
 
         // 認証済みユーザー（閲覧者）の投稿として作成（リクエストされた値をもとに作成）
@@ -43,7 +43,7 @@ class MicropostsController extends Controller
         ]);
 
         // 前のURLへリダイレクトさせる
-        return back();
+        return back()->with('success', '投稿しました。');
     }
 
     public function destroy(string $id)
@@ -55,11 +55,11 @@ class MicropostsController extends Controller
         if (Auth::id() === $micropost->user_id) {
             $micropost->delete();
             return back()
-                ->with('success','Delete Successful');
+                ->with('success', '投稿を削除しました。');
         }
 
         // 前のURLへリダイレクトさせる
         return back()
-            ->with('Delete Failed');
+            ->withErrors(['delete' => 'この投稿を削除する権限がありません。']);
     }
 }

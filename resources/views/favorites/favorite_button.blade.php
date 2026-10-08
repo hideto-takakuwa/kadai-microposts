@@ -5,7 +5,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-ghost btn-circle btn-sm text-error hover:bg-error/10" title="お気に入り解除"
-                aria-label="Unfavorite">
+                aria-label="お気に入りを解除">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
                     <path d="M11.645 20.91a.75.75 0 0 0 .71 0C17.84 17.74 21 14.28 21 10.125
             21 7.057 18.53 4.5 15.375 4.5
@@ -22,7 +22,7 @@
             @csrf
             <button type="submit"
                 class="btn btn-ghost btn-circle btn-sm text-base-content/50 hover:text-error hover:bg-error/10"
-                title="お気に入り" aria-label="Favorite">
+                title="お気に入り" aria-label="お気に入りに追加">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.8" class="size-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5

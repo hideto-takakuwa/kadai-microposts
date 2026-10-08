@@ -3,7 +3,7 @@
         {{-- トップページへのリンク --}}
         <div class="flex-1">
             <h1>
-                <a href="/" class="flex items-center gap-2.5" aria-label="Home">
+                <a href="/" class="flex items-center gap-2.5" aria-label="ホーム">
 
                     {{-- ロゴ --}}
                     <span class="flex size-9 items-center justify-center text-primary">
@@ -48,7 +48,7 @@
                                 @auth
                                     {{ Auth::user()->name }}
                                 @else
-                                    Guest
+                                    ゲスト
                                 @endauth
                             </summary>
                             <ul class="menu dropdown-content shadow rounded-t-none bg-base-100 w-52 p-2 link-neutral">

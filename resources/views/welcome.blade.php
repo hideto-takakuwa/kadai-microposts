@@ -9,7 +9,7 @@
                     <div class="flex items-center gap-3">
                         <div class="avatar shrink-0">
                             <div class="w-12 rounded-full">
-                                <img src="{{ Gravatar::get($user->email) }}" alt="" />
+                                <x-user-avatar :user="$user" />
                             </div>
                         </div>
                         <a href="{{ route('users.show', $user->id) }}"

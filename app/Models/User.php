@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Creativeorange\Gravatar\Facades\Gravatar;
 
 class User extends Authenticatable // implements MustVerifyEmail
 {
@@ -56,6 +58,13 @@ class User extends Authenticatable // implements MustVerifyEmail
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    public function avatarUrl(int $size = 80): string
+    {
+        return $this->avatar_path
+            ? Storage::disk('public')->url($this->avatar_path)
+            : Gravatar::get($this->email, ['size' => $size, 'secure' => true]);
     }
 
     public function microposts()

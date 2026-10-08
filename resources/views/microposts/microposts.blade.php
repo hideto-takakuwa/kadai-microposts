@@ -3,10 +3,10 @@
         <ul class="list-none space-y-4">
             @foreach ($microposts as $micropost)
                 <li class="flex items-start gap-3 rounded-xl border border-base-300 bg-base-100 p-4 shadow-sm">
-                    {{-- 投稿の所有者のメールアドレスをもとにGravatarを取得して表示 --}}
+                    {{-- 投稿者のプロフィール画像 --}}
                     <div class="avatar shrink-0">
                         <div class="w-12 rounded-full">
-                            <img src="{{ Gravatar::get($micropost->user->email) }}" alt="" />
+                            <x-user-avatar :user="$micropost->user" />
                         </div>
                     </div>
                     <div class="min-w-0 flex-1">

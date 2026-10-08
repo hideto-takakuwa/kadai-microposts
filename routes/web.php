@@ -4,6 +4,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MicropostsController;
 use App\Http\Controllers\UserFollowController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\UserAvatarController;
 
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -24,6 +25,7 @@ Route::get('/dashboard', [MicropostsController::class, 'index'])->middleware(['a
 Route::middleware(['auth'])->group(function () {
 
     Route::prefix('users/{id}')->group(function () {
+        Route::put('avatar', [UserAvatarController::class, 'update'])->name('users.avatar.update');
         Route::post('follow', [UserFollowController::class, 'store'])->name('user.follow');
         Route::delete('unfollow', [UserFollowController::class, 'destroy'])->name('user.unfollow');
         Route::get('followings', [UsersController::class, 'followings'])->name('users.followings');

@@ -10,7 +10,9 @@ class UsersController extends Controller
     public function index()
     {
         // ユーザー一覧をidの降順で取得
-        $users = User::orderBy('id', 'desc')->paginate(10);
+        $users = User::withCount(['followings', 'followers'])
+            ->orderBy('id', 'desc')
+            ->paginate(10);
 
         // ユーザー一覧ビューで表示
         return view('users.index', [
@@ -51,7 +53,9 @@ class UsersController extends Controller
         $user->loadRelationshipCounts();
 
         // ユーザーのフォロー一覧を取得
-        $followings = $user->followings()->paginate(10);
+        $followings = $user->followings()
+            ->withCount(['followings', 'followers'])
+            ->paginate(10);
 
         // フォロー一覧ビューでそれらを表示
         return view('users.followings', [
@@ -75,7 +79,9 @@ class UsersController extends Controller
         $user->loadRelationshipCounts();
 
         // ユーザーのフォロワー一覧を取得
-        $followers = $user->followers()->paginate(10);
+        $followers = $user->followers()
+            ->withCount(['followings', 'followers'])
+            ->paginate(10);
 
         // フォロワー一覧ビューでそれらを表示
         return view('users.followers', [
